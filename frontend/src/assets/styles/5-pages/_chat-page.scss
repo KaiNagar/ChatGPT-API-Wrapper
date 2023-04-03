@@ -3,10 +3,10 @@
   font-size: 1.4rem;
   height: 100%;
   .headers {
-    height:min-content;
-    .chat-prev-value{
-        margin-top: rem(10px);
-        font-weight: bold;
+    height: min-content;
+    .chat-prev-value {
+      margin-top: rem(10px);
+      font-weight: bold;
     }
     .chat-header {
       font-weight: bold;
@@ -19,7 +19,6 @@
     margin-block: rem(10px);
     padding: 1rem;
     border-radius: rem(4px);
-
   }
 
   .chat-form {
@@ -34,13 +33,25 @@
       background-color: #ececec;
       border: 1px solid $clr-border;
       border-radius: rem(4px);
-      &:focus-visible{
+      &:focus-visible {
         outline: 1px solid $clr-grey;
       }
     }
     .send-icon {
       position: absolute;
       right: 20px;
+      cursor: pointer;
+    }
+    .send-icon-img {
+      width: 25px;
+      margin-top: 4px;
+    }
+    .loading-icon {
+      position: absolute;
+      right: -100px;
+      cursor: pointer;
+      width: 250px;
+      z-index: 1;
     }
   }
 }

@@ -2,7 +2,7 @@ from flask import Blueprint, request, jsonify
 import requests
 import json
 
-chat = Blueprint(__name__,'chat')
+chat = Blueprint(__name__, 'chat')
 
 
 @chat.route('/', methods=['POST'])
@@ -19,7 +19,7 @@ def chat_post():
     data = {
         'inputs': message,
         'options': {
-            # 'generate_length': 50, # can add answer length here
+            'generate_length': 500,  # for max length per response i set it to 500 characters
             'max_time': 10
         }
     }
@@ -29,5 +29,4 @@ def chat_post():
         generated_text = result[0]["generated_text"]
         return generated_text
     except requests.exceptions.HTTPError as e:
-        return jsonify({'error':str(e)})
-
+        return jsonify({'error': str(e)})
