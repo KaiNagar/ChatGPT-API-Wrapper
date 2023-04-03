@@ -1,45 +1,12 @@
 // COLOR PALETTE
-// $clr-MBG: hsl(218, 28%, 13%);
-// $clr-FBG: hsl(216, 53%, 9%);
-// $clr-introBG: hsl(217, 28%, 15%);
-// $clr-testiBG: hsl(219, 30%, 18%);
 $clr-white: #fff;
-$clr-links: #62e0d9;
 $clr-border: #707070;
 $clr-Lgrey: #c0c0c0;
 $clr-grey: rgba(110, 103, 103, 0.5);
-$clr-main: #115571;
-$clr-secondary: #31afb4;
-$clr-MLight: lighten($clr-main, 60%);
-$clr-SLight: lighten($clr-secondary, 40%);
-$clr-warning: rgb(224, 71, 71);
 $clr-black:#000;
 $clr-headerLink:rgb(56, 51, 51);
 
-// Colors
-$clr1: #5352ed;
-$clr2: #70a1ff;
-$clr3: #dfe4ea;
-$clr4: #2f3542;
-$clr5: #574f7d;
-$clr6: #7bed9f;
-$clr7: #fff;
-$clr8: rgba(255, 255, 255, 0.26);
 
-// LAYOUT
-$layoutPadding: 20px;
-$navHeight: 65px;
-
-// LAYOUT BREAKPOINTS
-$mobile-breakpoint: 600px;
-$tablet-breakpoint: 768px;
-$normal-breakpoint: 900px;
-$wide-breakpoint: 1080px;
-
-$padded-mobile-breakpoint: $mobile-breakpoint + $layoutPadding * 2;
-$padded-tablet-breakpoint: $tablet-breakpoint + $layoutPadding * 2;
-$padded-normal-breakpoint: $normal-breakpoint + $layoutPadding * 2;
-$padded-wide-breakpoint: $wide-breakpoint + $layoutPadding * 2;
 
 
 
