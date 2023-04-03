@@ -10,11 +10,11 @@
     }
     .chat-header {
       font-weight: bold;
-      border-bottom: 1px solid $clr-border;
     }
   }
   .response-from-chat {
     flex-grow: 1;
+    text-align: left;
     border: 1px solid $clr-border;
     margin-block: rem(10px);
     padding: 1rem;

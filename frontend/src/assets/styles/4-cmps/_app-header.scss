@@ -11,13 +11,13 @@
   .app-header {
     .header-link {
       margin-right: 1rem;
-      &:hover {
-        text-decoration: none;
-      }
+      color: $clr-headerLink;
+      
     }
     .active {
       color: white;
-      text-decoration: none;
+      transition: all 0.3;
+      text-decoration: underline;
     }
   }
 }

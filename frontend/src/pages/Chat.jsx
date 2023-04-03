@@ -1,5 +1,4 @@
 import { useState } from 'react'
-import { Link } from 'react-router-dom'
 import { chatService } from '../services/chatService'
 
 export const Chat = () => {
@@ -27,7 +26,7 @@ export const Chat = () => {
   return (
     <section className='chat-page flex column space-between'>
       <div className='headers'>
-        <h1 className='chat-header'>Go on! Talk to me please!</h1>
+        <h1 className='chat-header'>Go on, Talk to me</h1>
         <h3 className='chat-prev-value'>
           {prevInputValue && `Input: ${prevInputValue}`}
         </h3>
@@ -39,7 +38,7 @@ export const Chat = () => {
             type='text'
             value={inputValue}
             onChange={onChangeInput}
-            placeholder='Tell me somethine please...'
+            placeholder='Tell me something...'
           />
           {!isWaiting ? (
             <span onClick={onSubmitForm} className='send-icon'>
