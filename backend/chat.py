@@ -9,7 +9,6 @@ chat = Blueprint(__name__,'chat')
 def chat_post():
     try:
         message = request.json['message']
-        print(request.json)
     except KeyError:
         return jsonify({'error': 'No message was sent.'}), 400
 
