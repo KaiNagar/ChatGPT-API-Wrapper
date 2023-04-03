@@ -7,6 +7,7 @@ import { Home } from './pages/Home'
 import { AppHeader } from './cmps/AppHeader'
 import { AppFooter } from './cmps/AppFooter'
 import { Chat } from './pages/Chat'
+import { UserMsg } from './cmps/user-msg'
 
 export function App() {
   return (
@@ -21,6 +22,7 @@ export function App() {
             </Routes>
           </div>
         </div>
+        <UserMsg />
         <AppFooter />
       </div>
     </Router>

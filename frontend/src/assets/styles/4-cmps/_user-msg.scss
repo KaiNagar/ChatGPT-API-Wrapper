@@ -1,0 +1,17 @@
+.user-msg {
+  padding: 1.4rem;
+  border-radius: rem(4px);
+  color: white;
+  position: absolute;
+  left: 50%;
+  top: 1rem;
+  transform: translateX(-50%);
+  transition: all 0.3;
+}
+.success {
+  background-color: #126d12;
+}
+
+.error {
+  background-color: #871717;
+}

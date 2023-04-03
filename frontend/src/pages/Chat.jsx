@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { chatService } from '../services/chatService'
+import { showErrorMsg, showSuccessMsg } from '../services/event-bus.service'
 
 export const Chat = () => {
   const [inputValue, setInputValue] = useState('')
@@ -16,11 +17,15 @@ export const Chat = () => {
   const onSubmitForm = async (ev) => {
     ev.preventDefault()
     setIsWaiting(true)
-    const response = await chatService.sendMsg(inputValue)
-    setIsWaiting(false)
-    setResponseFromChat(response)
-    setPrevInputValue(inputValue)
-    setInputValue('')
+    try{
+      const response = await chatService.sendMsg(inputValue)
+      setIsWaiting(false)
+      setResponseFromChat(response)
+      setPrevInputValue(inputValue)
+      setInputValue('')
+    } catch(err){
+      showErrorMsg('Something went Wrong')
+    }
   }
 
   return (
