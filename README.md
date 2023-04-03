@@ -11,6 +11,11 @@ To run the ChatGPT API wrapper, you will need to set both frontend and backend.
 You will need Python 3.x and the following packages installed
 <ol>
 <li>Clone the repository to your local machine.</li>
+
+```bash
+git clone https://github.com/KaiNagar/ChatGPT-API-Wrapper.git
+```
+
 <li>Navigate to the backend directory.</li>
 
 ```bash
@@ -44,7 +49,7 @@ flask run
 # Frontend (React)
 
 <ol>
-
+<li>Open new terminal.</li>
 <li>Navigate to the frontend directory.</li>
 
 ```bash
