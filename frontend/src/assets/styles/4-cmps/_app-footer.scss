@@ -1,5 +1,7 @@
 .app-footer-container {
-  background-color: lightgray;
+  background-color: $clr-black;
+  color: white;
+  font-size: rem(14px);
   .app-footer {
     text-align: center;
   }

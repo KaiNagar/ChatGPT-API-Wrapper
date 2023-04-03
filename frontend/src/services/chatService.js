@@ -18,8 +18,8 @@ async function getHomeMsg() {
 
 async function sendMsg(message){
     try{
-        const response = await axios.post(`${API_URL}/chat`,{message})
-        console.log(response);
+        const response = await axios.post(`${API_URL}/chat/`,{message})
+        return response.data
     }catch(err){
         console.error('Something went wrong at endpoint,',err);
     }

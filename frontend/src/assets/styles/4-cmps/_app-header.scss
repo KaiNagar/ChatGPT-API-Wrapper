@@ -1,12 +1,23 @@
 .app-header-constainer {
-  background-color: lightblue;
-
+  background: rgb(248, 132, 26);
+  background: linear-gradient(
+    45deg,
+    rgba(248, 132, 26, 1) 0%,
+    rgba(251, 3, 17, 1) 50%,
+    rgba(240, 14, 81, 1) 100%
+  );
+  color: white;
+  
   .app-header {
-    .header-link{
-        margin-right:  1rem;
+    .header-link {
+      margin-right: 1rem;
+      &:hover {
+        text-decoration: none;
+      }
     }
     .active {
-      color: green;
+      color: white;
+      text-decoration: none;
     }
   }
 }

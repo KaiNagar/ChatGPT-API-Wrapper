@@ -15,6 +15,8 @@ body {
   //   "Droid Sans", "Helvetica Neue", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  font-family: 'Roboto Condensed', DINRoundPro, sans-serif;
+  font-size: 20px;
 }
 
 .active{
@@ -27,6 +29,10 @@ body {
   flex-direction: column;
   .main-container {
     flex-grow: 1;
+    background-color: #ececec;
+    .main{
+      height: 100%;
+    }
   }
 }
 
