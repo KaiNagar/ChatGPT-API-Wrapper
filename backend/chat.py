@@ -13,9 +13,9 @@ def chat_post():
     except KeyError:
         return jsonify({'error': 'No message was sent.'}), 400
 
-    #bulding the chat request with chatgpt URL 
+    # bulding the chat request with chatgpt URL 
     chatgpt_url = "https://api-inference.huggingface.co/models/EleutherAI/gpt-neo-2.7B"
-    #Headers (can add here authorization with API key but this is a free API so there is no need for that)
+    # Headers (can add here authorization with API key but this is a free API so there is no need for that)
     headers = {
         'Content-Type': 'application/json'
     }
