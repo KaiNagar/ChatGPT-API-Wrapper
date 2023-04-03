@@ -6,6 +6,7 @@ import { Home } from './pages/Home'
 
 import { AppHeader } from './cmps/AppHeader'
 import { AppFooter } from './cmps/AppFooter'
+import { Chat } from './pages/Chat'
 
 export function App() {
   return (
@@ -16,6 +17,7 @@ export function App() {
           <div className='main container'>
             <Routes>
               <Route path='/' element={<Home />} />
+              <Route path='/chat' element={<Chat />} />
             </Routes>
           </div>
         </div>

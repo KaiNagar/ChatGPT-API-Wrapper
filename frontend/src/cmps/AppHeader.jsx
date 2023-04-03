@@ -7,6 +7,9 @@ export const AppHeader = () => {
         <NavLink className='header-link' to='/'>
           Home
         </NavLink>
+        <NavLink className='header-link' to='/chat'>
+          Chat
+        </NavLink>
         
       </div>
     </section>
