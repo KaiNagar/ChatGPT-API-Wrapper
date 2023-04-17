@@ -43,3 +43,6 @@ def chat_post():
         return generated_text
     except requests.exceptions.HTTPError as e:
         return jsonify({'error': str(e)})
+    
+
+
