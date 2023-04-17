@@ -23,7 +23,7 @@ data = [
         }
     },
     {
-        "path": "bla",
+        "path": "temperature",
         "args": [
             {
                 "name": "date",
@@ -40,7 +40,7 @@ data = [
                     "role": "system",
                     "content": "You are the temperature service. Please provide the temperature for {location} on {date}."
                 },
-                {"role": "user", "content": "Can you please provide the weather in {location} on {date}"}
+                {"role": "user", "content": "Can you please provide the temperature in {location} on {date}"}
 
             ]
         }
