@@ -19,7 +19,7 @@ git clone https://github.com/KaiNagar/ChatGPT-API-Wrapper.git
 <li>Navigate to the backend directory.</li>
 
 ```bash
-cd ./backend/
+cd ./ChatGPT-API-Wrapper/backend/
 ```
 <li>Create a virtual environment for the project and activate it:</li>
 
@@ -53,7 +53,7 @@ flask run
 <li>Navigate to the frontend directory.</li>
 
 ```bash
-cd ./frontend/
+cd ./ChatGPT-API-Wrapper/frontend/
 ```
 
 <li>Install the required packages:</li>
