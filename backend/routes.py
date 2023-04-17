@@ -1,17 +1,48 @@
 data = [
     {
-        "path":"weather",
-        "args":[
+        "path": "weather",
+        "args": [
             {
-                "name":"date",
-                "type":"date-time"
+                "name": "location",
+                "type": "string"
+            },
+            {
+                "name": "date",
+                "type": "date-time"
             }
         ],
-        "prompt":{
+        "prompt": {
             "messages": [
-                { "role": "system", "content": "You are weather forcasting service" },
-                { "role": "user", "content": "Can you please provide the weather in Tel-Aviv on {date}" }
-              ]
-        } 
-    }
+                {
+                    "role": "system",
+                    "content": "You are the weather service. Please provide the weather for {location} on {date}."
+                },                {
+                    "role": "user", "content": "Can you please provide the weather in {location} on {date}"}
+
+            ]
+        }
+    },
+    {
+        "path": "bla",
+        "args": [
+            {
+                "name": "date",
+                "type": "date-time"
+            },
+            {
+                "name": "location",
+                "type": "string"
+            },
+        ],
+        "prompt": {
+            "messages": [
+                {
+                    "role": "system",
+                    "content": "You are the temperature service. Please provide the temperature for {location} on {date}."
+                },
+                {"role": "user", "content": "Can you please provide the weather in {location} on {date}"}
+
+            ]
+        }
+    },
 ]
