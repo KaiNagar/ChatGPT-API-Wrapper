@@ -46,32 +46,32 @@ data = [
         }
     },
     # this route is mainly to check boolean arg flow
-    # {
-    #     "path": "game",
-    #     "args": [
-    #         {
-    #             "name": "team",
-    #             "type": "string"
-    #         },
-    #         {
-    #             "name": "date",
-    #             "type": "date-time"
-    #         },
-    #         {
-    #             "name":"won",
-    #             "type":"boolean"
-    #         }
-    #     ],
-    #     "prompt": {
-    #         "messages": [
-    #             {
-    #                 "role": "system",
-    #                 "content": "You are the game service. Please provide the game status for {team} on {date}."
-    #             },                {
-    #                 "role": "user", "content": "Can you please provide the game status for {team} on {date}"}
+    {
+        "path": "game",
+        "args": [
+            {
+                "name": "team",
+                "type": "string"
+            },
+            {
+                "name": "date",
+                "type": "date-time"
+            },
+            {
+                "name":"won",
+                "type":"boolean"
+            }
+        ],
+        "prompt": {
+            "messages": [
+                {
+                    "role": "system",
+                    "content": "You are the game service. Please provide the game status for {team} on {date} if they won."
+                },                {
+                    "role": "user", "content": "Can you please provide the game status for {team} on {date}, and they won? {won}"}
 
-    #         ]
-    #     }
-    # }
+            ]
+        }
+    }
    
 ]
