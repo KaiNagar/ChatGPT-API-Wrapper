@@ -48,7 +48,6 @@ def create_view_func(args, prompt):
                 value = float(request.args.get(name))
             elif arg_type == 'boolean':
                 value = request.args.get(name).lower() == 'true'
-                print(value)
             elif arg_type == 'date-time':
                 value = request.args.get(name)
             request_args[name] = value
