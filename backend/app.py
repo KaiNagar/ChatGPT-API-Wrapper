@@ -5,10 +5,10 @@ from flask_cors import CORS
 
 # adding the interview project
 from routes import data
-from datetime import datetime
 
 # made a different file for the chat endpoints for future expansion and to make the app.py file more readable and specific
 from chat import chat
+from product import product
 
 app = Flask(__name__)
 
@@ -17,6 +17,7 @@ CORS(app, origins=['http://localhost:3000', 'http://127.0.0.1:3000'])
 
 # making all the chat endpoints start with /chat to make the code more organized
 app.register_blueprint(chat, url_prefix='/chat')
+app.register_blueprint(product, url_prefix='/product')
 
 # first endpoint requested at '/' returning a simple text, this is presented at the frontend on the home page
 @app.route('/')
@@ -24,7 +25,7 @@ def index():
     return 'Welcome to ChatGPT API Wrapper!'
 
 # function that will create each endpoint
-def create_routes(path, args, prompt):
+def create_routes(args, prompt):
     # Parse the request arguments
     request_args = {}
     for arg in args:
@@ -66,7 +67,7 @@ for item in data:
     # this line creates a new endpoint using the function above for each path specified in data
     # right now all methods are GET by default but we can add to each route a property specifying what kind of method it is 
     # then extract it from the request and use it in here
-    app.add_url_rule(f'/{path}', view_func=lambda:create_routes(path,args,prompt), methods=['GET'], endpoint=path)
+    app.add_url_rule(f'/{path}', view_func=lambda:create_routes(args,prompt), methods=['GET'], endpoint=path)
 
 # for development, use debug mode to automatically reload the server after every change
 if __name__ == '__main__':

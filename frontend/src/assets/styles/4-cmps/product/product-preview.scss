@@ -1,0 +1,22 @@
+.product-preview {
+  border-radius: rem(6px);
+  padding-block: 4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid $clr-border;
+  cursor: pointer;
+  font-size: 1.5rem;
+  &:hover {
+    transform: scale(1.01);
+    opacity: 0.8;
+  }
+}
+
+.Weather {
+    background: rgb(29,66,121);
+    background: linear-gradient(47deg, rgba(29,66,121,1) 0%, rgba(26,128,193,1) 55%, rgba(89,218,172,1) 100%);}
+
+.Temperature {
+    background: rgb(149,42,42);
+    background: linear-gradient(47deg, rgba(149,42,42,1) 0%, rgba(184,125,21,1) 80%, rgba(89,218,172,1) 100%);}

@@ -8,6 +8,7 @@ import { AppHeader } from './cmps/AppHeader'
 import { AppFooter } from './cmps/AppFooter'
 import { Chat } from './pages/Chat'
 import { UserMsg } from './cmps/user-msg'
+import { Products } from './pages/Products'
 
 export function App() {
   return (
@@ -19,6 +20,7 @@ export function App() {
             <Routes>
               <Route path='/' element={<Home />} />
               <Route path='/chat' element={<Chat />} />
+              <Route path='/products' element={<Products />} />
             </Routes>
           </div>
         </div>
