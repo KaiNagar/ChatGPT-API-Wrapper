@@ -1,6 +1,8 @@
 import { useEffect, useState } from 'react'
 import { productService } from '../services/productService'
 import { ProductList } from '../cmps/product/ProductList'
+import { showErrorMsg } from '../services/event-bus.service'
+import { chatService } from '../services/chatService'
 
 export const Products = () => {
   const [productsNames, setProductsNames] = useState()
@@ -17,13 +19,20 @@ export const Products = () => {
   }, [])
 
   const loadProducts = async () => {
-    const names = await productService.getProducts()
-    setProductsNames(names)
+    try {
+      const names = await productService.getProducts()
+      setProductsNames(names)
+    } catch (err) {
+      showErrorMsg('Something went wrong')
+    }
   }
 
   const onSetProduct = (productType) => {
-    console.log(productType.toLowerCase() );
-    setSelectedData((prevData) => ({ ...prevData, product: productType.toLowerCase() }))
+    console.log(productType.toLowerCase())
+    setSelectedData((prevData) => ({
+      ...prevData,
+      product: productType.toLowerCase(),
+    }))
   }
 
   const onChange = ({ target }) => {
@@ -31,9 +40,17 @@ export const Products = () => {
     setSelectedData((prevData) => ({ ...prevData, [name]: value }))
   }
 
-  const onSendData =async () => {
-    const response = await productService.getResponseFromProduct(selectedData)
-    console.log(response);
+  const onSendData = async () => {
+    if (!selectedData.date || !selectedData.location || !selectedData.product) {
+      return showErrorMsg('You must pick date location and a product')
+    }
+    try {
+      const response = await productService.getResponseFromProduct(selectedData)
+      const chatAnswer = await chatService.sendMsg(response.user)
+      setChatResponse({ system: response.system, ans: chatAnswer })
+    } catch (err) {
+      showErrorMsg('Something went wrong talking with the chat')
+    }
   }
 
   if (!productsNames)
@@ -45,18 +62,26 @@ export const Products = () => {
       <h1>Select a product to use</h1>
       <ProductList setProduct={onSetProduct} productsNames={productsNames} />
       {selectedData.product && (
-        <div className='select-data'>
-          <h1>You chose: {selectedData.product}</h1>
-          <h3>Pick a date to check at</h3>
-          <input onChange={onChange} name='date' type='date' />
-          <h3>Pick a location to check on</h3>
-          <input
-            onChange={onChange}
-            type='text'
-            name='location'
-            placeholder='Enter a real Location please'
-          />
-          <button onClick={onSendData}>Submit</button>
+        <div className='response-container flex'>
+          <div className='select-data'>
+            <h1>You chose: {selectedData.product}</h1>
+            <h3>Pick a date to check at</h3>
+            <input onChange={onChange} name='date' type='date' />
+            <h3>Pick a location to check on</h3>
+            <input
+              onChange={onChange}
+              type='text'
+              name='location'
+              placeholder='Enter a real Location please'
+            />
+            <button className='submit-btn' onClick={onSendData}>Submit</button>
+          </div>
+          {chatResponse && (
+            <div className='chat-response'>
+              <h4>{chatResponse.system}</h4>
+              <h5>{chatResponse.ans}</h5>
+            </div>
+          )}
         </div>
       )}
     </section>

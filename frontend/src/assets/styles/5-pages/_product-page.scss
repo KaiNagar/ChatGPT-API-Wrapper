@@ -1,0 +1,23 @@
+.product-page {
+  .response-container {
+    width: 100%;
+    .select-data {
+      margin-right: 1rem;
+    }
+    .submit-btn {
+      border: none;
+      padding: 0.4rem 0.6rem;
+      margin: 0.4rem;
+      background-color: rgb(218, 81, 81);
+      border-radius: rem(6px);
+      &:hover{
+        opacity: 0.8;
+        transform: scale(1.01);
+      }
+    }
+    .chat-response {
+      color: rgb(218, 81, 81);
+      width: 50%;
+    }
+  }
+}
