@@ -38,7 +38,6 @@ def create_view_func(args, prompt):
             name = arg.get('name')
             arg_type = arg.get('type')
             value = None
-
             # validating each type
             if arg_type == 'string':
                 value = request.args.get(name).title()

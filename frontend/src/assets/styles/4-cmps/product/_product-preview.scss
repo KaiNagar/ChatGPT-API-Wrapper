@@ -1,4 +1,11 @@
 .product-preview {
+  background: rgb(248, 132, 26);
+  background: linear-gradient(
+    45deg,
+    rgba(248, 132, 26, 1) 0%,
+    rgba(251, 3, 17, 1) 50%,
+    rgba(240, 14, 81, 1) 100%
+  );
   border-radius: rem(6px);
   padding-block: 4rem;
   display: flex;
@@ -14,9 +21,21 @@
 }
 
 .Weather {
-    background: rgb(29,66,121);
-    background: linear-gradient(47deg, rgba(29,66,121,1) 0%, rgba(26,128,193,1) 55%, rgba(89,218,172,1) 100%);}
+  background: rgb(29, 66, 121);
+  background: linear-gradient(
+    47deg,
+    rgba(29, 66, 121, 1) 0%,
+    rgba(26, 128, 193, 1) 55%,
+    rgba(89, 218, 172, 1) 100%
+  );
+}
 
 .Temperature {
-    background: rgb(149,42,42);
-    background: linear-gradient(47deg, rgba(149,42,42,1) 0%, rgba(184,125,21,1) 80%, rgba(89,218,172,1) 100%);}
+  background: rgb(149, 42, 42);
+  background: linear-gradient(
+    47deg,
+    rgba(149, 42, 42, 1) 0%,
+    rgba(184, 125, 21, 1) 80%,
+    rgba(89, 218, 172, 1) 100%
+  );
+}

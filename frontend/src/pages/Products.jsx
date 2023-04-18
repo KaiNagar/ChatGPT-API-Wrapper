@@ -67,14 +67,20 @@ export const Products = () => {
             <h1>You chose: {selectedData.product}</h1>
             <h3>Pick a date to check at</h3>
             <input onChange={onChange} name='date' type='date' />
-            <h3>Pick a location to check on</h3>
+            <h3>Pick a {
+                selectedData.product === 'game' ? 'team' : 'location'
+              } to check on</h3>
             <input
               onChange={onChange}
               type='text'
               name='location'
-              placeholder='Enter a real Location please'
+              placeholder={`Enter a real ${
+                selectedData.product === 'game' ? 'team' : 'location'
+              } please`}
             />
-            <button className='submit-btn' onClick={onSendData}>Submit</button>
+            <button className='submit-btn' onClick={onSendData}>
+              Submit
+            </button>
           </div>
           {chatResponse && (
             <div className='chat-response'>
